@@ -1,0 +1,31 @@
+<div *ngIf="show">
+<div  class="c1">
+<!-- style="margin-top: 20%;direction: rtl;" -->
+<!-- <mat-form-field>
+  <h2>נא העלה 3 תמונות בעבור כל שיעור</h2>
+</mat-form-field> -->
+<div class="txt">
+  <p>  נא העלה תמונה בעבור כל שיעור </p>
+  <br>
+</div>
+<!-- <h2>נא העלה 3 תמונות בעבור כל שיעור</h2>
+<br> -->
+<div class="upload">
+  <!-- <label class="span">  טען נוכחות תלמידים</label> -->
+ <input type="file" class="up" (change)="upload(fileUpload)" #fileUpload >
+</div>
+
+<!-- <<button mat-raised-button color="primary" style="font-size: larger;" type="submit">בדיקה</button> -->
+<button mat-raised-button color="primary" style="font-size: larger;" type="submit" (click)="view()">לצפייה בדוח הנוכחות</button>
+
+<div>
+<router-outlet></router-outlet>
+
+<!-- <img class="im" [src]="url">
+</div>
+<button mat-mini-fab color="primary"
+          (click)="fileUpload.click()"><mat-icon>add_photo_alternate</mat-icon>
+        </button>
+
+        <input type="file" (change)="selectFile($event)"   observeFiles
+        style="display: none" id="uploadCaptureInputFile" #fileUpload  > -->

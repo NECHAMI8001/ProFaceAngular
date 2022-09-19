@@ -1,0 +1,90 @@
+
+<div *ngIf="show" >
+  <form  #frm="ngForm" class="c1">
+   <div style="margin-top: 20%;direction: rtl;">
+     <mat-form-field>
+     <mat-label  style="text-align: right;direction: rtl;">תז תלמיד</mat-label>
+     <input type="text" matInput [formControl]="IDStudentFormControl" [errorStateMatcher]="matcher"
+     placeholder="212314567"
+     name="b" style="text-align: right;direction: ltr;" [(ngModel)]="student.Student_ID" ngDefaultControl matInput/>
+
+     <mat-hint>ID Student just include 9 numbers</mat-hint>
+     <mat-error *ngIf="IDStudentFormControl.hasError('text') && !IDStudentFormControl.hasError('required')">
+       Please enter a valid  Student ID
+     </mat-error>
+     <mat-error *ngIf="IDStudentFormControl.hasError('required')">
+       Student ID is <strong>required</strong>
+     </mat-error>
+     <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+   </mat-form-field>
+   <br>
+   <mat-form-field>
+    <mat-label  style="text-align: right;direction: rtl;">שם תלמיד</mat-label>
+    <input type="text" matInput [formControl]="NameStudentFormControl" [errorStateMatcher]="matcher"
+    placeholder="אילה שוורץ"
+    name="b" style="text-align: right;direction: ltr;" [(ngModel)]="student.Student_Name"  ngDefaultControl matInput/>
+    <!-- <label>{{valid}}</label>
+    (keyup)="checkName()" -->
+    <mat-hint>Student Name can include until 20 characters in hebrew</mat-hint>
+    <mat-error *ngIf="NameStudentFormControl.hasError('text') && !NameStudentFormControl.hasError('required')">
+      Please enter a valid Student Name
+    </mat-error>
+    <mat-error *ngIf="NameStudentFormControl.hasError('required')">
+      Student Name is <strong>required</strong>
+    </mat-error>
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+  </mat-form-field>
+
+  <!-- <label>{{valid}}</label> -->
+<br>  <br>
+
+
+
+<div class="upload">
+  <!-- <label class="span">  טען נוכחות תלמידים</label> -->
+ <input type="file" class="up" (change)="upload(fileUpload)" #fileUpload >
+</div>
+
+
+
+<!-- <mat-form-field>
+  <mat-label  style="text-align: right;direction: rtl;">תמונה תלמיד</mat-label>
+  <input type="text"
+  placeholder=" תמונה תלמיד"
+  name="b" style="text-align: right;direction: ltr;" [(ngModel)]="student.Student_Image" ngDefaultControl matInput/>
+  <mat-hint>you need to attach picture to Student </mat-hint>
+<mat-error >
+  Student picture is <strong>required</strong>
+</mat-error>
+</mat-form-field> -->
+
+
+
+
+
+
+<!--
+  <mat-hint>Student Name can include until 20 characters in hebrew</mat-hint>
+  <mat-error *ngIf="NameStudentFormControl.hasError('text') && !NameStudentFormControl.hasError('required')">
+    Please enter a valid Student Name
+  </mat-error>
+  <mat-error *ngIf="NameStudentFormControl.hasError('required')">
+    Student Name is <strong>required</strong>
+  </mat-error> -->
+  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+<br>  <br>  <br>
+<button mat-raised-button color="primary" style="font-size: larger;" type="submit" (click)="insertStudent()">אישור</button>
+   </div>
+</form>
+</div>
+
+<!--
+<img class="im" [src]="url">
+<button mat-mini-fab color="primary"
+          (click)="fileUpload.click()"><mat-icon>add_photo_alternate</mat-icon>
+        </button>
+
+        <input type="file" (change)="selectFile($event)"   observeFiles
+        style="display: none" id="uploadCaptureInputFile" #fileUpload  > -->
+

@@ -1,0 +1,75 @@
+<!-- <p>login works!</p>
+ -->
+ <!-- <div *ngIf="show"> -->
+  <!-- <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill"> -->
+      <!-- (submit)="Login()" -->
+      <!-- <body class="gradient" class="c2"> -->
+      <!-- <div class="image" class="c3"> -->
+        <!-- <img id="logo" src=" assets/home/logo.png "> -->
+
+        <!-- assets/home/logo.png  -->
+          <!-- </div> -->
+          <!-- <body  style="background-image: url('../assets/LogoFace1.jpg') ; direction: rtl;background-size: 100%;background-repeat: no-repeat;background-attachment: fixed;position: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> -->
+
+<div *ngIf="show">
+ <form (submit)="Login(grade.Grade_Code,grade.Grade_Password)" #frm="ngForm" class="c1">
+
+  <div style="margin-top: 20%;direction: rtl;">
+    <mat-form-field>
+    <mat-label  style="text-align: right;direction: rtl;">קוד כיתה</mat-label>
+    <input type="number" matInput [formControl]="codeGradeFormControl" [errorStateMatcher]="matcher"
+    placeholder="123456"
+    name="b" style="text-align: right;direction: ltr;" [(ngModel)]="grade.Grade_Code" ngDefaultControl matInput/>
+
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="codeGradeFormControl.hasError('number') && !codeGradeFormControl.hasError('required')">
+      Please enter a valid Grade code
+    </mat-error>
+    <mat-error *ngIf="codeGradeFormControl.hasError('required')">
+      Grade Code is <strong>required</strong>
+    </mat-error>
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>סיסמא</mat-label>
+    <input type="number" matInput [formControl]="passwordFormControl" [errorStateMatcher]="matcher"
+    placeholder="123456"
+     name="a" [type]="hide?'password':'text'" style="direction: ltr;" [(ngModel)]="grade.Grade_Password"  ngDefaultControl matInput>
+     <mat-hint>Errors appear instantly!</mat-hint>
+     <mat-error *ngIf="passwordFormControl.hasError('number') && !passwordFormControl.hasError('required')">
+       Please enter a valid Grade code
+     </mat-error>
+     <mat-error *ngIf="passwordFormControl.hasError('required')">
+      password is <strong>required</strong>
+     </mat-error>
+     <mat-icon class="material-icons" natSuffix (click)="hide=!hide">{{hide? 'visibility':'visibility_off'}}</mat-icon>
+  </mat-form-field>
+  <br><br>
+  <button mat-raised-button color="primary" style="font-size: larger;" type="submit" (click)="Login(grade.Grade_Code,grade.Grade_Password)" >אישור</button>
+</div>
+
+  <br><br>
+  <!-- <button mat-raised-button color="accent" style="font-size: medium;" type="submit" (click)="toSignUp()">עוד לא נרשמתי</button> -->
+
+  <!-- <div class="btnfrm">
+    <mat-chip-list aria-label="Fish selection" >
+      <button mat-button type="submit"  [disabled]="!frm.valid" class="btnOK" selected>עוד לא נרשמתי</button>
+      </mat-chip-list>
+
+    </div> -->
+
+  </form>
+
+</div>
+      <!-- </body> -->
+
+<!--
+    </mat-form-field>
+  </form> -->
+
+
+<router-outlet></router-outlet>
+
+

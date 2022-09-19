@@ -1,0 +1,69 @@
+<!-- <p>sign-up works!</p> -->
+
+<div *ngIf="show">
+<!-- <form class="c1"> -->
+  <form  #frm="ngForm" class="c1">
+  <div style="margin-top: 20%;direction: rtl;">
+    <mat-form-field>
+    <mat-label  style="text-align: right;direction: rtl;">קוד כיתה</mat-label>
+    <input type="number" matInput [formControl]="codeGradeFormControl" [errorStateMatcher]="matcher"
+    placeholder="123456"
+    name="b" style="text-align: right;direction: ltr;" [(ngModel)]="newGrade.Grade_Code" ngDefaultControl matInput/>
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="codeGradeFormControl.hasError('number') && !codeGradeFormControl.hasError('required')">
+      Please enter a valid Grade code
+    </mat-error>
+    <mat-error *ngIf="codeGradeFormControl.hasError('required')">
+      codeGrade is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <br>
+
+  <!-- <form style="text-align: center;width: 23%;height: 55%;font-size: large;background-color: white;margin-top: 75px;margin-right: 37%;direction: ltr;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> -->
+    <!-- <div style="margin-top: 20%;direction: rtl;"> -->
+      <mat-form-field>
+      <mat-label  style="text-align: right;direction: rtl;">שם כיתה</mat-label>
+      <input type="text" matInput [formControl]="NameGradeFormControl" [errorStateMatcher]="matcher"
+      placeholder="א"
+      name="b" style="text-align: right;direction: ltr;" [(ngModel)]="newGrade.Grade_Name" ngDefaultControl matInput/>
+      <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+      <mat-hint>grade name can include until 3 characters</mat-hint>
+      <mat-error *ngIf="NameGradeFormControl.hasError('text') && !NameGradeFormControl.hasError('required')">
+        Please enter a valid Grade code
+      </mat-error>
+      <mat-error *ngIf="NameGradeFormControl.hasError('required')">
+         Grade Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br>
+  <mat-form-field>
+    <mat-label>סיסמא</mat-label>
+    <input type="number" matInput [formControl]="passwordFormControl" [errorStateMatcher]="matcher"
+    placeholder="123456"
+    name="a" [type]="hide?'password':'text'" style="direction: ltr;" [(ngModel)]="newGrade.Grade_Password"  ngDefaultControl matInput>
+    <mat-hint>Errors appear instantly!</mat-hint>
+     <mat-error *ngIf="passwordFormControl.hasError('number') && !passwordFormControl.hasError('required')">
+       Please enter a valid Grade code
+     </mat-error>
+     <mat-error *ngIf="passwordFormControl.hasError('required')">
+      password is <strong>required</strong>
+     </mat-error>
+    <mat-icon class="material-icons" natSuffix (click)="hide=!hide">{{hide? 'visibility':'visibility_off'}}</mat-icon>
+  </mat-form-field>
+  <br>
+  <!-- <mat-form-field>
+    <mat-label>אשר סיסמא</mat-label>
+    <input name="ab" [type]="hide?'password':'text'" style="direction: ltr;" [(ngModel)]="Grade_Password"  ngDefaultControl matInput>
+    <mat-icon class="material-icons" natSuffix (click)="hide=!hide">{{hide? 'visibility':'visibility_off'}}</mat-icon>
+  </mat-form-field> -->
+  <br>
+  <button mat-raised-button color="primary" style="font-size: larger;" type="submit" (click)="SignUp1()">אישור</button>
+
+
+</div>
+
+<!-- </div> -->
+</form>
+
+<router-outlet></router-outlet>
+

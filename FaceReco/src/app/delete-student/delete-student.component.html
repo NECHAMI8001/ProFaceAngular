@@ -1,0 +1,11 @@
+<!-- <p>delete-student works!</p> -->
+
+
+<div *ngIf="show">
+  <input type="text" placeholder="תז תלמיד" [(ngModel)]="student.Student_ID" >
+  <!-- <button (click)="delete1(student.Student_ID)" >מחק</button> -->
+  <button mat-raised-button color="primary" style="font-size: larger;" type="submit" (click)="delete1(student.Student_ID)">מחק</button>
+</div>
+<!-- i.studentID -->
+<!-- (click)="Delete(student.Student_ID)" -->
+

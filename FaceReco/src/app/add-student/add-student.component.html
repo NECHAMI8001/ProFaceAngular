@@ -1,0 +1,91 @@
+<!-- fas fa-home
+fas fa-sign-out-alt
+fas fa-user-lock	 -->
+<!-- <button mat-mini-fab color="primary" (click)="house()">
+  <mat-icon>fas fa-sign-out-alt</mat-icon>
+</button> -->
+
+
+  <!-- <input
+  type="text"
+  [(ngModel)]="searchText"
+  class="form-control"
+  id="search"
+  mdbInput
+/>
+<label for="search">Search</label> -->
+<div *ngIf="show" class="c1">
+  <div class="txt">
+    <p> תלמידי כיתה {{grade_name}} </p>
+    <br>
+  </div>
+  <table>
+    <thead>
+        <tr>
+          <th>תז תלמיד</th>
+          <th> שם תלמיד </th>
+          <th> תמונה </th>
+        </tr>
+      </thead>
+      <tbody>
+ <tr *ngFor=' let  i of st'>
+    <td >{{i.Student_ID}}</td>
+    <td >{{i.Student_Name}}</td>
+    <td >{{i.Student_Image}}</td>
+ </tr>
+      </tbody>
+
+<!-- <table> -->
+<!-- <table mdbTable class="z-depth-1">
+  <thead>
+    <tr>
+      <th
+        *ngFor="let head of headElements; let i = index"
+        scope="col"
+      >
+        {{ head }}
+      </th>
+    </tr>
+  </thead> -->
+  <!-- <td  >תז תלמידה </td>
+  <td>שם תלמידה</td>
+  <td>תמונה </td> -->
+
+  <!-- <tbody> -->
+    <!-- <tr *ngFor="let el of elements; let i = index"> -->
+  <!-- <tr *ngFor=' let  i of st'>
+    <td >{{i.Student_ID}}</td>
+    <td >{{i.Student_Name}}</td>
+    <td >{{i.Student_Image}}</td>
+ </tr> -->
+  <!-- </tbody> -->
+</table>
+
+<!-- <input type="button" value="הוסף תלמיד חדש" (click)="add()"/> -->
+<!-- <input type="button" value="מחק תלמיד " (click)="delete1()"/> -->
+
+
+<!-- <button class="btn"   style="background-color: transparent;" color="transparent"
+ mat-mini-fab mat-button mat-stroked-button  (click)="add()" > <mat-icon>add_circle_outline</mat-icon></button> -->
+
+
+
+<button   style="background-color: transparent;" color="transparent"
+ mat-mini-fab mat-button mat-stroked-button  (click)="add()" > <mat-icon>add_circle_outline</mat-icon></button>
+
+<button  style="background-color: transparent;" color="transparent"
+ mat-mini-fab mat-button mat-stroked-button  (click)="delete1()"> <mat-icon>delete</mat-icon></button>
+
+<!-- <button mat-raised-button color="primary" style="font-size: larger;" type="submit" (click)="add()">הוסף תלמיד חדש</button> -->
+<!-- <button mat-raised-button color="primary" style="font-size: larger;" type="submit" (click)="delete1()">מחק תלמיד</button> -->
+
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+

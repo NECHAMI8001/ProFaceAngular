@@ -1,0 +1,71 @@
+<!-- <p>view-report-presence works!</p> -->
+<div *ngIf="show" class="c1">
+  <div class="txt">
+    <p> נוכחות כיתה {{grade_name}} </p>
+    <br>
+  </div>
+  <table>
+    <thead>
+        <tr>
+          <!-- <th>קוד נוכחות</th> -->
+          <th> תז תלמיד</th>
+          <th> שעת שיעור</th>
+          <th>תאריך</th>
+          <th>נוכחות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor=' let  i of pr'>
+          <!-- <td >{{i.Presence_Code}}</td> -->
+       <td >{{i.Presence_Student_ID}}</td>
+          <td >{{i.Presence_Hour}}</td>
+          <td >{{i.Presence_Date | date:"dd/MM/y"}}</td>
+          <td >{{i.Presence_TimeBLesson | bool}}</td>
+          <!-- <td >{{i.Presence_TimeMLesson| bool}}</td>
+          <td >{{i.Presence_TimeELesson| bool}}</td> -->
+       </tr>
+      </tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<table>
+  <td> קוד נוכחות </td>
+  <td>תז תלמיד </td>
+  <td>שעת שיעור </td>
+  <td>תאריך  </td>
+  <td>נוכחות1  </td>
+  <td>נוכחות2  </td>
+  <td>נוכחות3  </td>
+
+  <tr *ngFor=' let  i of pr'>
+    <td >{{i.Presence_Code}}</td>
+ <td >{{i.Presence_Student_ID}}</td>
+    <td >{{i.Presence_Hour}}</td>
+    <td >{{i.Presence_Date | date:"dd/MM/y"}}</td>
+    <td >{{i.Presence_TimeBLesson | bool}}</td>
+    <td >{{i.Presence_TimeMLesson| bool}}</td>
+    <td >{{i.Presence_TimeELesson| bool}}</td>
+ </tr>
+</table> -->
+</table>
+
+
+<button class="btn"   style="background-color: transparent;" color="transparent"
+ mat-mini-fab mat-button mat-stroked-button  (click)="printPage()" > <mat-icon>print</mat-icon></button>
+
+<!-- <button mat-raised-button color="primary" style="font-size: larger;" type="submit" (click)="printPage()">הדפסת עמוד נוכחי</button> -->
+</div>

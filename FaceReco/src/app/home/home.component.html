@@ -1,0 +1,60 @@
+<!-- <p>home works!</p> -->
+<body  style="background-image: url('../assets/LogoFace1.jpg') ; direction: rtl;background-size: 100%;background-repeat: no-repeat;background-attachment: fixed;position: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+<div *ngIf="show">
+
+  <div class="frm">
+
+    <mat-tab-group>
+
+        <!-- <mat-tab>
+            <ng-template mat-tab-label>
+                <button mat-button (click)="home()"><img src="assets/home/icon.png"></button>
+            </ng-template>
+        </mat-tab> -->
+        <mat-tab>
+            <ng-template mat-tab-label>
+               <button mat-button (click)="ToSignUp()"> הרשמה</button>
+             </ng-template>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+             <button mat-button (click)="ToLogin()">כניסה</button>
+           </ng-template>
+      </mat-tab>
+
+      <!-- <mat-tab>
+
+          <p>שלום מורה יקרה</p>
+
+    </mat-tab> -->
+
+
+
+        <!-- <mat-tab>
+            <ng-template mat-tab-label>
+               <button mat-button [matMenuTriggerFor]="afterMenu">בחירות קיימות</button>
+               <mat-menu #afterMenu="matMenu" xPosition="before">
+                  <button mat-menu-item *ngFor="let item of ElectionsList" (click)="selectedElection(item)">{{item.ElectionName}}</button>
+                </mat-menu>
+             </ng-template>
+        </mat-tab> -->
+        <!-- <mat-tab>
+            <ng-template mat-tab-label>
+               <button mat-button [matMenuTriggerFor]="afterMenu1">בחירות עכשיו</button>
+               <mat-menu #afterMenu1="matMenu" xPosition="before">
+                  <button mat-menu-item *ngFor="let item of ElectionsList" (click)="ResultElection(item)">{{item.ElectionName}}</button>
+                </mat-menu>
+             </ng-template>
+        </mat-tab> -->
+    </mat-tab-group>
+    <!-- <div class="txt">
+      <h1>ברוכים הבאים לאתר נוכחות בקלות</h1>
+      <p>
+      מורה/ מרצה יקר, באתר זה תוכל לבצע בדיקת נוכחות בצורה קלה ומהירה יותר
+      </p>
+      </div> -->
+  </div>
+  </div>
+  <router-outlet></router-outlet>
+</body>
